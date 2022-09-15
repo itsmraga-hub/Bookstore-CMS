@@ -1,0 +1,26 @@
+.formContainer {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 2em;
+  padding: 1em 0;
+}
+
+.formContainer h1 {
+  font-weight: 900;
+}
+
+.formContainer form {
+  display: flex;
+  gap: 1em;
+}
+
+.formContainer form input {
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+
+.formContainer form button {
+  padding: 0.25em 1em;
+  font-size: 1.5em;
+  background-color: rgb(14, 182, 238);
+}
