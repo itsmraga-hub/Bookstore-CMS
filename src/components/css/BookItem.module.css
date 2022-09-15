@@ -14,27 +14,11 @@
   gap: 0.5rem;
 }
 
-.BookContainer .BookInfo .BookGenre {
-  
-}
-
-.BookContainer .BookInfo .BookTitle {
-  
-}
-
-.BookContainer .BookInfo .BookAuthor {
-  
-}
-
 .BookContainer .BookInfo ul {
   list-style: none;
   display: flex;
   gap: 1em;
   padding-top: 1em;
-}
-
-.BookContainer .BookInfo ul li {
-  
 }
 
 .BookContainer .BookInfo ul li a {
