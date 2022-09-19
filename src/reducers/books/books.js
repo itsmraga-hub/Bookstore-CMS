@@ -1,20 +1,33 @@
-const ADD_BOOK = 'ADD-BOOK';
+const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE-BOOK';
 
+// addBook action creator
+export const addBook = (book) => ({
+  type: ADD_BOOK,
+  book,
+});
 
-const booksReducer = (state = defaultState, action) => ({
+// removeBook action creator
+export const removeBook = (book) => ({
+  type: REMOVE_BOOK,
+  book,
+});
+
+// books reducer function
+const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
-      return {
-        
-      }
-      break;
+      return [
+        ...state, action.book,
+      ];
     }
     case REMOVE_BOOK: {
-      break;
+      return state.filter((book) => book.id !== action.book);
     }
-    default: return state;
+    default: {
+      return state;
+    }
   }
-});
+};
 
 export default booksReducer;
