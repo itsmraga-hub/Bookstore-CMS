@@ -1,35 +1,27 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import BookItem from './BookItem';
 
 import style from './css/BookStore.module.css';
 import InputBook from './InputBook';
 
-const books = [
-  {
-    id: 1,
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-  },
-  {
-    id: 2,
-    title: 'The GodFather',
-    author: 'Mario Puzo',
-  },
-];
-
-const BookStore = () => (
-  <>
-    <ul className={style.BooksContainer}>
-      {
+const BookStore = () => {
+  const books = useSelector((state) => state.books);
+  return (
+    <>
+      <ul className={style.BooksContainer}>
+        {
         books.map((book) => {
           const { title, author, id } = book;
-          return <BookItem key={`book-${id}`} title={title} author={author} />;
+          return <BookItem key={`book-${id}`} id={id} title={title} author={author} />;
         })
       }
-    </ul>
-    <InputBook />
-  </>
-);
+      </ul>
+      <InputBook />
+    </>
+  );
+};
 
 export default BookStore;

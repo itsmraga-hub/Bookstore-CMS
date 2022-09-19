@@ -1,3 +1,7 @@
+import { useDispatch } from 'react-redux';
+
+import { checkStatus } from '../reducers/categories/categories';
+
 import Header from '../components/Header';
 
 const Button = {
@@ -14,13 +18,21 @@ const Container = {
   paddingTop: '2em',
 };
 
-const Categories = () => (
-  <>
-    <Header />
-    <div style={Container}>
-      <button style={Button} type="button">Check Status</button>
-    </div>
-  </>
-);
+const Categories = () => {
+  const dispatch = useDispatch();
+
+  const checkStatusBtn = () => {
+    dispatch(checkStatus('CHECK_STATUS'));
+  };
+
+  return (
+    <>
+      <Header />
+      <div style={Container}>
+        <button onClick={checkStatusBtn} style={Button} type="button">Check Status</button>
+      </div>
+    </>
+  );
+};
 
 export default Categories;
