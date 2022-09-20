@@ -7,9 +7,10 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 const FETCH_BOOKS = 'bookstore-cms/books/FETCH_BOOKS';
 
 export const fetchBooks = () => async (dispatch) => {
-  const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/');
+  const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/', {
+    method: 'GET',
+  });
   const data = await response.json();
-  // console.log(data);
   const bookIDs = Object.entries(data);
   const books = [];
   bookIDs.forEach(([key, book]) => {
@@ -41,11 +42,21 @@ export const removeBook = (id) => async (dispatch) => {
   });
 };
 
-// addBook action creator
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  book,
-});
+export const addBook = (book) => async (dispatch) => {
+  await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(book),
+  });
+  dispatch({
+    type: ADD_BOOK,
+    book,
+  });
+};
 
 // books reducer function
 const booksReducer = (state = [], action) => {
@@ -56,7 +67,6 @@ const booksReducer = (state = [], action) => {
       ];
     }
     case REMOVE_BOOK: {
-      console.log(action.id);
       return state.filter((book) => book.id !== action.id);
     }
     case FETCH_BOOKS: {

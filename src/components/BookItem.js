@@ -15,13 +15,6 @@ const BookItem = (props) => {
   const { title, author, id } = book;
 
   const dispatch = useDispatch();
-  // const { books } = store.getState();
-
-  // const getBook = (e) => {
-  // e.preventDefault();
-  // const bk = books.filter((bk) => bk.id === e.target.id);
-  //   dispatch(removeBook(e.target.id));
-  // };
 
   const remBook = (e) => {
     e.preventDefault();
