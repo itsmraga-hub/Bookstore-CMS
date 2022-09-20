@@ -1,40 +1,65 @@
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE-BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const defaultState = [
-  {
-    id: uuidv4(),
-    title: 'The hunger games',
-    author: 'William Raga',
-  },
-  {
-    id: uuidv4(),
-    title: 'Water under the bridge',
-    author: 'Mikaela Adios',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Great Gatsby',
-    author: 'Guy',
-  },
-];
+// const APP_ID = '782uhXQAzTM0kEfK8j10';
+const FETCH_BOOKS = 'bookstore-cms/books/FETCH_BOOKS';
 
-// addBook action creator
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  book,
-});
+export const fetchBooks = () => async (dispatch) => {
+  const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/', {
+    method: 'GET',
+  });
+  const data = await response.json();
+  const bookIDs = Object.entries(data);
+  const books = [];
+  bookIDs.forEach(([key, book]) => {
+    const id = key;
+    const { title, author, category } = book[0];
+    books.push({
+      id, title, author, category,
+    });
+  });
+  dispatch({
+    type: FETCH_BOOKS,
+    payload: books,
+  });
+};
 
-// removeBook action creator
-export const removeBook = (book) => ({
-  type: REMOVE_BOOK,
-  book,
-});
+export const removeBook = (id) => async (dispatch) => {
+  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  });
+  dispatch({
+    type: REMOVE_BOOK,
+    id,
+  });
+};
+
+export const addBook = (book) => async (dispatch) => {
+  await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/782uhXQAzTM0kEfK8j10/books/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(book),
+  });
+  dispatch({
+    type: ADD_BOOK,
+    book,
+  });
+};
 
 // books reducer function
-const booksReducer = (state = defaultState, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
       return [
@@ -42,7 +67,10 @@ const booksReducer = (state = defaultState, action) => {
       ];
     }
     case REMOVE_BOOK: {
-      return state.filter((book) => book.id !== action.book.id);
+      return state.filter((book) => book.id !== action.id);
+    }
+    case FETCH_BOOKS: {
+      return [...action.payload];
     }
     default: {
       return state;

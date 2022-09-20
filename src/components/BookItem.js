@@ -3,7 +3,7 @@ import React from 'react';
 // Redux functions
 import { useDispatch } from 'react-redux';
 
-import store from '../reducers/configureStore';
+// import store from '../reducers/configureStore';
 
 import { removeBook } from '../reducers/books/books';
 
@@ -15,12 +15,10 @@ const BookItem = (props) => {
   const { title, author, id } = book;
 
   const dispatch = useDispatch();
-  const { books } = store.getState();
 
-  const getBook = (e) => {
+  const remBook = (e) => {
     e.preventDefault();
-    const bk = books.filter((bk) => bk.id === e.target.id);
-    dispatch(removeBook(bk[0]));
+    dispatch(removeBook(e.target.id));
   };
 
   return (
@@ -31,7 +29,7 @@ const BookItem = (props) => {
         <p className={style.BookAuthor}>{author}</p>
         <ul>
           <li><a href="./">Comments</a></li>
-          <li><a id={id} onClick={getBook} href="./">Remove</a></li>
+          <li><a id={id} onClick={remBook} href="./">Remove</a></li>
           <li><a href="./">Edit</a></li>
         </ul>
       </div>

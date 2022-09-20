@@ -11,7 +11,8 @@ const InputBook = () => {
   const [book, setBook] = useState({
     title: '',
     author: '',
-    id: uuidv4(),
+    item_id: '',
+    category: 'fiction',
   });
 
   // Dispatch method to add book to redux store
@@ -20,13 +21,19 @@ const InputBook = () => {
   const handleForm = (e) => {
     e.preventDefault();
     dispatch(addBook(book));
+    setBook({
+      title: '',
+      author: '',
+      item_id: '',
+      category: 'fiction',
+    });
   };
 
   // Function to handle inputs - title and author
   const handleInput = (e) => {
     setBook({
       ...book,
-      id: uuidv4(),
+      item_id: uuidv4(),
       [e.target.name]: e.target.value,
     });
   };
