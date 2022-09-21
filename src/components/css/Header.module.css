@@ -8,6 +8,7 @@
   margin: 0 auto;
   padding: 1rem;
   background-color: #fff;
+  font-family: Montserrat, sans-serif;
 }
 
 .headerContainer .container {
@@ -20,12 +21,7 @@
 .headerContainer .container .logo {
   text-decoration: none;
   font-weight: bold;
-  font-family: Montserrat, sans-serif;
   font-size: 1.875rem;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #0290ff;
 }
 
@@ -33,12 +29,7 @@
   list-style: none;
   display: flex;
   gap: 1em;
-  font-family: Montserrat, sans-serif;
   font-size: 0.813rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 2px;
   color: #121212;
   text-transform: uppercase;

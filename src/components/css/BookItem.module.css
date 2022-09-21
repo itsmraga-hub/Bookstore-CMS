@@ -22,26 +22,17 @@
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
 .BookTitle {
-  font-family: RobotoSlab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.2px;
   color: #121212;
 }
 
 .BookAuthor {
-  font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -49,6 +40,11 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
+}
+
+.BookContainer .BookInfo {
+  border-right: 1px solid #e8e8e8;
+  padding-right: 1em;
 }
 
 .BookContainer .BookInfo ul {
@@ -72,10 +68,6 @@
   font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
@@ -97,25 +89,17 @@
   gap: 1em;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid #e8e8e8;
+  padding-right: 1em;
 }
 
 .percentage h1 {
   font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
 .percentage p {
   font-size: 0.875rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
   text-transform: capitalize;
 }
@@ -128,23 +112,14 @@
 
 .Progress .CurrentChapter {
   opacity: 0.5;
-  font-family: RobotoSlab, sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
 .Progress .CurrentLesson {
-  font-family: RobotoSlab, sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.4px;
   color: #121212;
 }
@@ -153,12 +128,8 @@
   border-radius: 3px;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   background-color: #0290ff;
-  font-family: RobotoSlab, sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
