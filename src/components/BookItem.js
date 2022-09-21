@@ -35,13 +35,15 @@ const BookItem = (props) => {
       </div>
       <div className={style.BookProgress}>
         <div className={style.Oval} />
-        <h1>8%</h1>
-        <p>completed</p>
+        <div className={style.percentage}>
+          <h1>64%</h1>
+          <p>completed</p>
+        </div>
       </div>
       <div className={style.Progress}>
-        <h3>CURRENT CHAPTER</h3>
-        <h4>Chapter 17</h4>
-        <button type="button">UPDATE PROGRESS</button>
+        <h3 className={style.CurrentChapter}>CURRENT CHAPTER</h3>
+        <h4 className={style.CurrentLesson}>Chapter 17</h4>
+        <button type="button" className={style.btn}>UPDATE PROGRESS</button>
       </div>
     </li>
   );
