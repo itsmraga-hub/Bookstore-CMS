@@ -6,8 +6,10 @@ import './css/App.css';
 
 const App = () => (
   <>
-    <Header />
-    <BookStore />
+    <div className="Bookstore-CMS">
+      <Header />
+      <BookStore />
+    </div>
   </>
 );
 

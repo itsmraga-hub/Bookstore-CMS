@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+:root {
+  --pale-grey: #f5f6fa;
+}
+
 body {
   font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.Bookstore-CMS {
+  height: auto;
+  padding: 5rem 3.75rem 3rem 6.25rem;
+  background-color: var(--pale-grey);
 }

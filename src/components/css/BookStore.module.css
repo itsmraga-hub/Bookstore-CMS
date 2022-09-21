@@ -1,6 +1,7 @@
 .BooksContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1rem;
+  padding: 1rem;
+  margin: auto;
 }

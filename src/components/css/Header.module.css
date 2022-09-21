@@ -1,13 +1,18 @@
 .headerContainer {
-  width: 100%;
-  height: 8vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 2em;
+  width: 87.5%;
+  height: 5rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  font-family: Montserrat, sans-serif;
 }
 
 .headerContainer .container {
+  width: 80%;
   display: flex;
   gap: 1em;
   align-items: center;
@@ -16,18 +21,24 @@
 .headerContainer .container .logo {
   text-decoration: none;
   font-weight: bold;
-  color: rgb(31, 177, 226);
-  font-size: 1.5em;
+  font-size: 1.875rem;
+  color: #0290ff;
 }
 
 .headerContainer .container .mainPages {
   list-style: none;
   display: flex;
   gap: 1em;
+  font-size: 0.813rem;
+  letter-spacing: 2px;
+  color: #121212;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.mainPages .page link {
+.mainPages .page .link {
   text-decoration: none;
+  color: #121212;
 }
 
 .headerContainer svg {

@@ -42,8 +42,8 @@ const InputBook = () => {
     <section className={style.formContainer}>
       <h2>ADD NEW BOOK</h2>
       <form action="#">
-        <input type="test" name="title" onChange={handleInput} placeholder="book title" value={book.title} className={style.input} />
-        <input type="test" name="author" onChange={handleInput} placeholder="author" value={book.author} className={style.input} />
+        <input type="test" name="title" onChange={handleInput} placeholder="book title" value={book.title} className={style.inputTitle} />
+        <input type="test" name="author" onChange={handleInput} placeholder="author" value={book.author} className={style.inputAuthor} />
         <button type="button" onClick={handleForm} className={style.inputButton}>Add Book</button>
       </form>
     </section>
