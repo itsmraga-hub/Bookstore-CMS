@@ -52,9 +52,14 @@ export const addBook = (book) => async (dispatch) => {
     },
     body: JSON.stringify(book),
   });
+  const id = book.item_id;
+  const bk = {
+    ...book,
+    id,
+  };
   dispatch({
     type: ADD_BOOK,
-    book,
+    bk,
   });
 };
 
@@ -63,7 +68,7 @@ const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
       return [
-        ...state, action.book,
+        ...state, action.bk,
       ];
     }
     case REMOVE_BOOK: {
