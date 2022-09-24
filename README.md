@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link coming soon](https://livedemo.com)
+[Live Demo Link](https://fanciful-bookstore.netlify.app/)
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-- Deployed to github pages.
+- Deployed to netlify.
 
 ## Author
 
